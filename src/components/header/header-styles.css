@@ -12,8 +12,9 @@
 
 .header-name{
     display: flex;
-    height: 300px;
+    height: 200px;
     width: 80vw;
-    background-color: aliceblue;
-    margin: 0  250px ;
+    background: rgb(8,193,251);
+    background: linear-gradient(90deg, rgba(8,193,251,1) 15%, rgba(124,14,252,1) 53%, rgba(255,112,186,1) 100%);
+    margin: 120px  250px ;
 }
