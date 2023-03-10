@@ -23,7 +23,7 @@ const ListClients = ()=>{
                 <div className='client'> 
                     
                 
-                    </div>   
+                </div>   
             </tbody>
 
 
