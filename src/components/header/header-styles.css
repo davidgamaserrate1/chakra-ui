@@ -1,0 +1,19 @@
+.header-img{
+    width: calc(100% - (250px * 2));
+    margin: 0 250px;     
+}
+
+.header{
+    display: flex;
+    height: 8vw;
+    height: 500px;
+    background:  #061c33   ;
+}
+
+.header-name{
+    display: flex;
+    height: 300px;
+    width: 80vw;
+    background-color: aliceblue;
+    margin: 0  250px ;
+}
