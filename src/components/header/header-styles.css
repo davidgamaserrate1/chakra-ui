@@ -1,53 +1,49 @@
 .header-out{
-   
-
-    margin: 20px 20px;  
-    border-top: 1px solid #ffffff;
+  
      
-     
+    /* margin: 20px 20px;  
+    border-top: 1px dashed #ffffff;
+      */
+    height: 35px; 
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
+    color: #ffffff;
 } 
 
-.header{
+.header-options{
     display: flex;
-    justify-content: center;
-    font-family: Raleway;
-    /* background:  #061c33   ; */
-    background: rgb(255,112,186);
-    background: rgb(255,112,186);
-    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
-    height: 80px;
-    margin: 130px 250px;
-    position: relative;
-    border-radius: 5px;    
-    
- }
-
- .header-desc{
-    display: flex;
-    position: absolute;
-    left: 150px;
-    top: 20px;     
-    font-size: 40px;
-    color: #ffffff;
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    
- }
+    margin: 7px ;
+}
 
- .header-logo{
-    display: flex;   
-    height: 130px;
-    width: 130px;
-    border-radius: 100%;
-    position: absolute;  
-    color: #ffffff;
-    background: rgb(8,193,251);
-    background: rgb(8,193,251);
-    background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
-    top: -20px;
-    right: 100px;
-    text-align: center;
-    justify-content: center;
- }
+.header-logout{
+    position: absolute;
+    right: 40px;
+    top: 7px;
+}
+
+.header-logout:hover{
+    cursor: pointer;
+    text-decoration: underline #e70052 ;
+     
+    padding: 0 3px;
+    transform: 0.3s;
+    border-radius: 5px;
+}
+.header-top{
+    text-transform: uppercase;
+    display: flex;
+   
+     
+}
+
+
+
 
  .header-logo__image{      
     height: 100px;

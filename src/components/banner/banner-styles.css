@@ -1,0 +1,40 @@
+
+.banner{
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
+    height: 80px;
+    margin: 130px 250px;
+    position: relative;
+    border-radius: 15px;    
+    
+ }
+
+ 
+ .banner-desc{
+    display: flex;
+    position: absolute;
+    left: 150px;
+    top: 20px;     
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: bold;
+      
+    
+ }
+
+ 
+ .banner-logo{
+    display: flex;   
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    position: absolute;  
+    color: #ffffff;
+    background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
+    top: -25px;
+    right: 100px;
+    text-align: center;
+    justify-content: center;
+ }
