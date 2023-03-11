@@ -1,7 +1,7 @@
 .list-clients-modal{
     width: 100%;
     display: flex;     
-    height: calc(100vh - 8vw);
+    height:  100vh;
     background-image:  url("../../assets/fundo.png") ;     
     /* background-size: 100px 80px  ; */
     background-size: 100vw 100vh ;

@@ -1,47 +1,61 @@
-/* .header-img{
-    width: calc(100% - (250px * 2));
-    margin: 0 250px;     
-} */
+.header-out{
+   
+
+    margin: 20px 20px;  
+    border-top: 1px solid #ffffff;
+     
+     
+} 
 
 .header{
     display: flex;
-    height: 8vw;
-    height: 350px;
-    background:  #061c33   ;
-}
-
-.header-name{
-   
-    height: auto;
-    width: 80vw;
-    background: linear-gradient(90deg, rgba(255,112,186,1) 15%, rgba(124,14,252,1) 55%, rgba(8,193,251,1) 100%);
-    margin: 120px  250px ;
-}
-
-.header-name_desc{
-    display: flex;
-    color: #ffffff;
-    font-family: 'Raleway', sans-serif;
-    max-width: 960px;
-    font-size: 100px;
     justify-content: center;
-    font-weight: bold;
-    flex-wrap: wrap;
-    margin: auto auto;
-     
-}
-
-.header-logo{
-    padding: 0 15px;
+    font-family: Raleway;
+    /* background:  #061c33   ; */
+    background: rgb(255,112,186);
+    background: rgb(255,112,186);
+    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
+    height: 80px;
+    margin: 130px 250px;
     position: relative;
-   
-}
+    border-radius: 5px;    
+    
+ }
 
-.header-img{
-    background: linear-gradient(90deg, rgba(255,112,186,1) 15%, rgba(124,14,252,1) 55%, rgba(8,193,251,1) 100%);
+ .header-desc{
+    display: flex;
     position: absolute;
-    top: -122px; 
-    right: 120px;
-    height: 150px;
-   border-radius: 150px;
-}
+    left: 150px;
+    top: 20px;     
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: bold;
+    
+ }
+
+ .header-logo{
+    display: flex;   
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    position: absolute;  
+    color: #ffffff;
+    background: rgb(8,193,251);
+    background: rgb(8,193,251);
+    background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
+    top: -20px;
+    right: 100px;
+    text-align: center;
+    justify-content: center;
+ }
+
+ .header-logo__image{      
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    justify-content: center; 
+    position: absolute;
+    margin: 15px;
+     
+     
+ }
