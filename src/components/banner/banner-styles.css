@@ -1,23 +1,24 @@
 
 .banner{    
-    display: flex;
-    justify-content: center;
-    font-family: 'Raleway', sans-serif;
-    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
-    height: 80px;
-    margin: 130px 250px;
-    position: relative;
-    border-radius: 15px;        
+   display: flex;
+   justify-content: center;
+   font-family: 'Raleway', sans-serif;
+   background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
+   height: 80px;
+   margin: 130px 250px;
+   position: relative;
+   border-radius: 15px;        
  }
  
  .banner-desc{
     display: flex;
     position: absolute;
     left: 150px;
-    top: 20px;     
+    top: 10px;     
     font-size: 40px;
     color: #ffffff;
     font-weight: bold;    
+     text-transform: uppercase;
  }
  
  .banner-logo{

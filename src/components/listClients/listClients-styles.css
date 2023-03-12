@@ -7,7 +7,6 @@
     flex-direction: column;
 }
 
-
 .list-clients-table{
     font-family: 'Raleway', sans-serif;     
     display: flex;
@@ -21,7 +20,6 @@
 
 .list-clients-head{
     background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
-     
     color: #ffffff;     
     display: flex;
     justify-content: space-around;
@@ -30,16 +28,11 @@
     text-align: center;
     width: 100%; 
     border-radius: 15px;
-     
-    
-     
 }
 
 .list-clients-data__name, .list-clients-data__instagram,
-.list-clients-data__tel, .list-clients-data__action {
- 
-  
-
+.list-clients-data__tel, .list-clients-data__action, .list-clients-data__org {
+    text-transform: uppercase;
 }
  
  
