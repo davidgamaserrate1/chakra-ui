@@ -1,0 +1,27 @@
+.cliente{
+    display: flex;
+    color: #000000;
+    background: #ffffff;
+    border: #000000;
+    height: 80px;
+    width: 100%;
+    margin:   5px;
+    border-radius: 15px;
+    justify-content: space-around;
+}
+
+.cliente__name, .cliente__instagram , .cliente__phone, .cliente__action{
+    display: flex;
+    align-items: center;     
+    font-weight: bold;
+    flex-wrap: wrap;     
+    max-width: 260px;  
+}
+
+.cliente__phone{
+ 
+}
+
+.cliente__instagram{
+    
+}

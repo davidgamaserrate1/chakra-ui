@@ -1,11 +1,11 @@
 import './banner-styles.css'
 import logo from '../../assets/logo.png'
 
-const Banner =() =>{
+const Banner =(props) =>{
     return(
     <div className='banner'>
-      <div className='banner-desc'> Cadastro De Clientes </div>
-      <div className='banner-logo'>  <img  className='header-logo__image' src={logo}/> </div>
+      <div className='banner-desc'>{props.desc} </div>
+      <div className='banner-logo'>  <img  className='header-logo__image' src={logo} alt='logo image'/> </div>
     </div>
     )
 }

@@ -1,26 +1,44 @@
-.list-clients-modal{
-    width: 100%;
+.list-clients-container{
+    width: 100vw;
     display: flex;     
     height:  100vh;
-    background-image:  url("../../assets/fundo.png") ;     
-    /* background-size: 100px 80px  ; */
+    background-image:  url("../../assets/fundo.png") ;          
     background-size: 100vw 100vh ;
     flex-direction: column;
 }
 
 
-.list-clients{
-    font-family: 'Raleway', sans-serif;
-    /* color: #ffffff;    */
+.list-clients-table{
+    font-family: 'Raleway', sans-serif;     
     display: flex;
-    justify-content: center;
-    
     background: #f1ecea;
-
+    border-radius: 15px;
     margin: 0  250px ;
-    padding: 30px; 
+    position: relative;
+    flex-wrap: wrap; 
 }
 
-.client{
-    background:  #e70052 ;
-} 
+.list-clients-head{
+    background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
+     
+    color: #ffffff;     
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    padding: 10px ;
+    text-align: center;
+    width: 100%; 
+    border-radius: 15px;
+     
+
+     
+}
+
+.list-clients-data__name, .list-clients-data__instagram,
+.list-clients-data__tel, .list-clients-data__action {
+ 
+  
+
+}
+ 
+ 

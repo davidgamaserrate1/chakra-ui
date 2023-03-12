@@ -23,7 +23,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
+body {  font-family: 'Raleway', sans-serif;
     background: #061c33;
     line-height: 1;
 }

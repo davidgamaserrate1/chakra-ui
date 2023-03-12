@@ -1,9 +1,4 @@
 .header-out{
-  
-     
-    /* margin: 20px 20px;  
-    border-top: 1px dashed #ffffff;
-      */
     height: 35px; 
     width: 100%;
     background: #ffffff;
@@ -11,12 +6,12 @@
     justify-content: center;
     background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
     color: #ffffff;
+    
 } 
 
 .header-options{
     display: flex;
-    font-size: 17px;
-    font-family: 'Raleway', sans-serif;
+    font-size: 17px;  
     font-weight: bold;
     margin: 7px ;
 }
@@ -25,33 +20,22 @@
     position: absolute;
     right: 40px;
     top: 7px;
+    
 }
 
 .header-logout:hover{
     cursor: pointer;
-    text-decoration: underline #e70052 ;
-     
+    text-decoration: underline #e70052 ;     
     padding: 0 3px;
     transform: 0.3s;
     border-radius: 5px;
 }
+
 .header-top{
     text-transform: uppercase;
     display: flex;
-   
-     
+    font-weight: bold;
 }
 
 
 
-
- .header-logo__image{      
-    height: 100px;
-    width: 100px;
-    border-radius: 100%;
-    justify-content: center; 
-    position: absolute;
-    margin: 15px;
-     
-     
- }

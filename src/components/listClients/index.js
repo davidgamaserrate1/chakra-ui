@@ -1,33 +1,21 @@
 import './listClients-styles.css'
- 
-const header = [{
-    name :'NOME',
-    name :'INSTAGRAM',
-    name :'TELEFONE',
-    name :'ORGANIZACAO',
-    name :'AÇÃO',
-}]
+
+import Client from '../client'
+
 const ListClients = ()=>{
     return (
-       <div className='list-clients-modal'>
+       <div className='list-clients-container'>
         
-        <table className='list-clients'>
-            <thead className=''>                
-                <td>NOME</td>
-                <td>INSTAGRAM</td>
-                <td>TELEFONE</td>
-                <td>AÇÃO</td>
+        <table className='list-clients-table'>
+            <thead className='list-clients-head'>                
+                <td className='list-clients-data__name'>NOME</td>
+                <td className='list-clients-data__instagram'>INSTAGRAM</td>
+                <td className='list-clients-data__tel'>TELEFONE</td>
+                <td className='list-clients-data__action'>AÇÃO</td>
             </thead>
-            
-            <tbody>
-                <div className='client'> 
-                    
-                
-                </div>   
-            </tbody>
-
-
-       
+        <Client name='David' instagram='igtest' phone='67 912345' action='add'/>
+        <Client/>
+        <Client/>
         </table>
        </div>
     )

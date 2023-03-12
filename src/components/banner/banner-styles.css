@@ -7,10 +7,8 @@
     height: 80px;
     margin: 130px 250px;
     position: relative;
-    border-radius: 15px;    
-    
+    border-radius: 15px;        
  }
-
  
  .banner-desc{
     display: flex;
@@ -19,11 +17,8 @@
     top: 20px;     
     font-size: 40px;
     color: #ffffff;
-    font-weight: bold;
-      
-    
+    font-weight: bold;    
  }
-
  
  .banner-logo{
     display: flex;   
@@ -37,4 +32,13 @@
     right: 100px;
     text-align: center;
     justify-content: center;
+ }
+ 
+ .header-logo__image{      
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    justify-content: center; 
+    position: absolute;
+    margin: 15px;
  }

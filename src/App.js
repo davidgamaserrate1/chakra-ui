@@ -8,7 +8,8 @@ function App() {
   return (
      <div>
         <Header/>
-        <Banner/>
+         <Banner desc ='Cadastro De Clientes'/>
+          
         <ListClients/>
      </div>
   );
