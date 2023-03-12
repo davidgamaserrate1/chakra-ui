@@ -40,9 +40,8 @@ const Client = (props) =>{
                         phone={props.phone}
                         org={props.org}
                         _id = {props._id}
-                    />
-                     {/* <a href={`/clientes/editar/${props._id}`}> Editar </a> */}
-                        </MenuItem >
+                    />                    
+                    </MenuItem >
                     <MenuItem  className='menuItem' >Detalhes</MenuItem>
                     <div onClick={() => { deleteUser(props._id) }}>
                         <MenuItem  className='menuItem' >Remover</MenuItem>

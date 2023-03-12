@@ -44,8 +44,8 @@ const EditClient =(props) =>{
     
     const updateClient = (e) => {
         e.preventDefault();
-        const cliente = { nome, instagram, telefone, organizacao };
         
+        const cliente = { nome, instagram, telefone, organizacao };
         
         fetch( process.env.REACT_APP_EDIT_CLIENT + clientid, {
             method: "PUT",

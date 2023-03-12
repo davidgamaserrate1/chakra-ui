@@ -12,3 +12,8 @@
  .add-client{
     margin: 10px 250px;
  }
+
+ .add-client__button{
+    background:  #e70052;
+     
+ }
