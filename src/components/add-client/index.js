@@ -55,7 +55,7 @@ const AddClient = (props) =>{
     
     return(
       <div className='add-client'>
-        <Button onClick={onOpen}>Adicionar</Button>
+        <Button onClick={onOpen}> Adicionar</Button>
         
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

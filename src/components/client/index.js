@@ -1,7 +1,7 @@
  
 import './client-styles.css'
 import { ExpandMore } from '@mui/icons-material'  
-
+import EditClient from '../edit-client/index.js'
 
 import {
     Menu,
@@ -33,9 +33,20 @@ const Client = (props) =>{
             <Menu  className='cliente__action'>
                 <MenuButton   className='menuButton' > <ExpandMore  /> </MenuButton>
                 <MenuList className='menuList' >
-                    <MenuItem  className='menuItem' >   <a href={`/clientes/editar/${props._id}`}>Editar</a></MenuItem>
+                    <MenuItem  className='menuItem' >  
+                    <EditClient
+                        name={props.name}
+                        instagram={props.instagram}
+                        phone={props.phone}
+                        org={props.org}
+                        _id = {props._id}
+                    />
+                     {/* <a href={`/clientes/editar/${props._id}`}> Editar </a> */}
+                        </MenuItem >
                     <MenuItem  className='menuItem' >Detalhes</MenuItem>
-                    <a onClick={() => { deleteUser(props._id) }} className='btn btn-dark'>   <MenuItem  className='menuItem' >Remover</MenuItem></a>
+                    <div onClick={() => { deleteUser(props._id) }}>
+                        <MenuItem  className='menuItem' >Remover</MenuItem>
+                    </div>
                                        
                 </MenuList>
             </Menu>

@@ -1,9 +1,8 @@
 import './listClients-styles.css'
 import Client from '../client/index.js'
-import ButtonAdd from '../button/index.js'
 import { useEffect, useState } from 'react'
- 
 import AddClient from '../add-client/index.js'
+import './listClients-styles.css'
 
 
 const ListClients = ()=>{
