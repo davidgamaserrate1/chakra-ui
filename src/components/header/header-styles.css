@@ -4,9 +4,8 @@
     background: #ffffff;
     display: flex;
     justify-content: center;
-    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
-    color: #ffffff;
-    
+    background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
+    color: #ffffff;    
 } 
 
 .header-options{
@@ -19,8 +18,7 @@
 .header-logout{
     position: absolute;
     right: 40px;
-    top: 7px;
-    
+    top: 7px;    
 }
 
 .header-logout:hover{

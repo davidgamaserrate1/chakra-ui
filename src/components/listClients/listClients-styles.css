@@ -1,7 +1,7 @@
 .list-clients-container{
     width: 100vw;
     display: flex;     
-    height:  100vh;
+    height:  calc(100vh - (245px + 100px + 32px));
     background-image:  url("../../assets/fundo.png") ;          
     background-size: 100vw 100vh ;
     flex-direction: column;

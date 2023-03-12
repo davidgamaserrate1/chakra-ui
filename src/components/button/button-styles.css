@@ -1,0 +1,21 @@
+.buttonAdd{
+    display: flex;
+    width: 100px;
+    height: 20px;
+    border-radius: 8px;
+    background-color: #f1ecea;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    margin: 10px 250px;
+    color: #ffffff;
+    font-weight: bold;
+    background: #ff70ba  ;
+
+}
+
+.buttonAdd:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

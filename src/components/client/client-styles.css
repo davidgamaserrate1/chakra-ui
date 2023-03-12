@@ -1,3 +1,32 @@
+.menuButton{
+    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
+    color: #ffffff;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    align-items: left;
+
+}
+.menuButton:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    text-decoration: underline;
+}
+
+.menuItem {
+    font-family: 'Raleway', sans-serif;
+    background: #f1ecea  ;
+    border-color: #f0f0f0;
+    border-width: 1px;
+}
+
+.menuItem:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #e70052 ;
+    padding: 5px;
+}
+
 .cliente{
     display: flex;
     color: #000000;
@@ -8,6 +37,13 @@
     margin:   5px;
     border-radius: 15px;
     justify-content: space-around;
+    box-shadow: 1px 1px 1px black;
+
+}
+
+.cliente:hover{
+    opacity: 0.2;
+    transition: 0.3s;
 }
 
 .cliente__name, .cliente__instagram , .cliente__phone, .cliente__action{
