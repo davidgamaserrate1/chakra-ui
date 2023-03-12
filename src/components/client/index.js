@@ -1,7 +1,7 @@
  
 import './client-styles.css'
 import { ExpandMore } from '@mui/icons-material'  
- 
+
 
 import {
     Menu,
@@ -10,7 +10,19 @@ import {
     MenuItem,
     
   } from '@chakra-ui/react'
- 
+
+   
+ const deleteUser=(id)=>{
+    if(window.confirm('Tem certeza que deseja remover este cliente ?')){
+      fetch(process.env.REACT_APP_CLIENT+id, {method:'DELETE'} ).then((res)=>{
+        window.location.reload();
+      }).catch((err) => {
+        console.log(err + ' resp : ' + err.message)
+    })
+    }
+  }
+
+
 const Client = (props) =>{
     return(
         <div className='cliente'>        
@@ -23,14 +35,10 @@ const Client = (props) =>{
                 <MenuList className='menuList' >
                     <MenuItem  className='menuItem' >   <a href={`/clientes/editar/${props._id}`}>Editar</a></MenuItem>
                     <MenuItem  className='menuItem' >Detalhes</MenuItem>
-                    <MenuItem  className='menuItem' >Remover</MenuItem>                     
+                    <a onClick={() => { deleteUser(props._id) }} className='btn btn-dark'>   <MenuItem  className='menuItem' >Remover</MenuItem></a>
+                                       
                 </MenuList>
             </Menu>
-            
-        
-            {/* <Link to={{pathname : `/clientes/${item._id}`, state:  item._id }}   className='btn btn-primary'>  Detalhes</Link>   
-                                                    
-            <a onClick={() => { RemoveClient(item._id) }} className='btn btn-dark'> Remover</a> */}
         </div>
         
     )
