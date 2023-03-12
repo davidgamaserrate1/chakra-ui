@@ -1,6 +1,8 @@
  
 import './client-styles.css'
+import { ExpandMore } from '@mui/icons-material'  
  
+
 import {
     Menu,
     MenuButton,
@@ -16,16 +18,19 @@ const Client = (props) =>{
             <div className='cliente__instagram'>{props.instagram} </div>
             <div className='cliente__phone'> {props.phone} </div>
             <div className='cliente__org'>{props.org} </div>
-            <div className='cliente__action'> 
-                <Menu className='cliente__action'>
-                    <MenuButton   className='menuButton' > Opções </MenuButton>
-                    <MenuList className='menuList' >
-                        <MenuItem  className='menuItem' >Editar</MenuItem>
-                        <MenuItem  className='menuItem' >Detalhes</MenuItem>
-                        <MenuItem  className='menuItem' >Remover</MenuItem>                     
-                    </MenuList>
-                </Menu>
-             </div>
+            <Menu  className='cliente__action'>
+                <MenuButton   className='menuButton' > <ExpandMore  /> </MenuButton>
+                <MenuList className='menuList' >
+                    <MenuItem  className='menuItem' >   <a href={`/clientes/editar/${props._id}`}>Editar</a></MenuItem>
+                    <MenuItem  className='menuItem' >Detalhes</MenuItem>
+                    <MenuItem  className='menuItem' >Remover</MenuItem>                     
+                </MenuList>
+            </Menu>
+            
+        
+            {/* <Link to={{pathname : `/clientes/${item._id}`, state:  item._id }}   className='btn btn-primary'>  Detalhes</Link>   
+                                                    
+            <a onClick={() => { RemoveClient(item._id) }} className='btn btn-dark'> Remover</a> */}
         </div>
         
     )

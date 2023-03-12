@@ -1,11 +1,9 @@
 import './listClients-styles.css'
-import Client from '../client'
-import ButtonAdd from '../button'
+import Client from '../client/index.js'
+import ButtonAdd from '../button/index.js'
 import { useEffect, useState } from 'react'
  
-
-
-
+import AddClient from '../add-client/index.js'
 
 
 const ListClients = ()=>{
@@ -24,8 +22,11 @@ const ListClients = ()=>{
   
      
     return (
+       <>
+       <AddClient/>
+        
        <div className='list-clients-container'>
-        <ButtonAdd name='adicionar'/>
+        {/* <ButtonAdd  name='Opções'/> */}
         <div className='list-clients-table'>
             <div className='list-clients-head'>                
                 <div className='list-clients-data__name'>NOME</div>
@@ -35,10 +36,12 @@ const ListClients = ()=>{
                 <div className='list-clients-data__action'>Ação </div>
             </div>
         {client && client.map((client)=>(
-            <Client name={client.nome} instagram={client.instagram} phone={client.telefone}org={client.organizacao}/>
+            <Client key={client._id} name={client.nome} instagram={client.instagram} phone={client.telefone}org={client.organizacao} _id={client._id} />
+      
         ))}    
         </div>
        </div>
+        </>
     )
 }
 

@@ -16,6 +16,7 @@
     margin: 0  250px ;
     position: relative;
     flex-wrap: wrap; 
+   
 }
 
 .list-clients-head{
@@ -30,7 +31,7 @@
     width: 100%; 
     border-radius: 15px;
      
-
+    
      
 }
 

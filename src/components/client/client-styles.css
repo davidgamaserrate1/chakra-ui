@@ -1,12 +1,15 @@
 .menuButton{
-    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
     color: #ffffff;
     border-radius: 15px;
     border: none;
-    padding: 8px;
+    padding: 5px;
     align-items: left;
-
+    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
+    background:  rgba(255,112,186,1);
+    margin: 20px  ;
+     
 }
+
 .menuButton:hover{
     cursor: pointer;
     opacity: 0.5;
@@ -40,11 +43,14 @@
     box-shadow: 1px 1px 1px black;
 }
 
-.cliente__name, .cliente__instagram , .cliente__phone, .cliente__action, .cliente__org{
+.cliente__name, .cliente__instagram , .cliente__phone, .cliente__action, .cliente__org {
     display: flex;
     align-items: center;     
     font-weight: bold;
     flex-wrap: wrap;     
     max-width: 260px;  
+    min-width: 120px;  
+    
 }
 
+ 

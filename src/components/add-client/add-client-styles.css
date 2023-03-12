@@ -1,0 +1,14 @@
+
+ .form-add-client_name, .form-add-client_phone, 
+ .form-add-client_org, .form-add-client_instagram {
+    width: 100%;
+    background: #f1ecea;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 15px 0;
+ }
+
+
+ .add-client{
+    margin: 10px 250px;
+ }

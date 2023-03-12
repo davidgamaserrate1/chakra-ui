@@ -24,7 +24,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {  font-family: 'Raleway', sans-serif;
-    background: #061c33;
+   
     line-height: 1;
 }
 ol, ul {
@@ -42,3 +42,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+.chakraProv{
+    background: #061c33;
+}
+ 
