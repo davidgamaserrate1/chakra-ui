@@ -11,13 +11,11 @@ import {
  
 const Client = (props) =>{
     return(
-        <>
-        
-        <div className='cliente'>
-        
+        <div className='cliente'>        
             <div className='cliente__name'> {props.name} </div>
             <div className='cliente__instagram'>{props.instagram} </div>
             <div className='cliente__phone'> {props.phone} </div>
+            <div className='cliente__org'>{props.org} </div>
             <div className='cliente__action'> 
                 <Menu className='cliente__action'>
                     <MenuButton   className='menuButton' > Opções </MenuButton>
@@ -29,7 +27,7 @@ const Client = (props) =>{
                 </Menu>
              </div>
         </div>
-        </>
+        
     )
 }
 
