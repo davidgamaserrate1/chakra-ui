@@ -1,4 +1,4 @@
- 
+
 import './App.css';
 import Header from './components/header/index.js';
 import ListClients from './components/listClients/index.js';
@@ -9,14 +9,11 @@ import AddClient from './components/add-client/index.js';
 import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
-  return (
-     <ChakraProvider className='chakraProv'>
-        <Header/>
-         <Banner desc ='Cadastro De Clientes'/>          
-          
-         <RoutesApp/>
-     </ChakraProvider>
-  );
+   return (
+      <ChakraProvider className='chakraProv'>
+         <RoutesApp />
+      </ChakraProvider>
+   );
 }
 
 export default App;
