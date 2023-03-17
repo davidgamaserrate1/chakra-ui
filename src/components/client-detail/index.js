@@ -11,88 +11,53 @@ import {
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
- 
+import Banner from '../banner/index.js';
 import './client-detail-styles.css'
 
 const ClientDetail = (props) =>{
     
     const client_id = useParams(props.clientid)
-    const [user, setUser] = useState('')
+
      
-      
-
-    
-    // useEffect(()=>{
-    //     fetch(
-    //         'https://apiclientes.vercel.app/clientes/640e07af1e8acea0a8209aa8',{method:'GET'}
-    //         // process.env.REACT_APP_API_URL_USERS + id_clientResponse.trim().replace('"','')
-    //     ).then((resp)=>{            
-    //         return resp.json()
-    //     }).then((res)=>{
-              
-    //         setName=(res )
-    //         setInstagram=(res)
-    //         setOrganizacao=(res.organizacao)
-    //         setPhone=(res.telefone)
-            
-    //     })
-
-    // },[])
+    const [name, setName] = useState('')
+    const [instagram, setInstagram] = useState('')
+    const [organization, setOrg] = useState('')
+    const [phone, setPhone] = useState('')
+     
 
 
+    console.log()
     useEffect(() => {
-        fetch('https://apiclientes.vercel.app/clientes/640e07af1e8acea0a8209aa8').then((res) => {
+        fetch('https://apiclientes.vercel.app/clientes/' + client_id.clientid ).then((res) => {
             return res.json();
         }).then((resp) => {
-            console.log('user ' + JSON.stringify(resp.nome))
-            setUser=(JSON.stringify(resp))
+            setName(resp.nome)
+            setInstagram(resp.instagram)
+            setOrg(resp.organizacao)
+            setPhone(resp.telefone)
+
         }).catch((err) => {
             console.log(err.message)
         })
     }, [])
      
     return(
-         
-        (user &&
-        (
-             <Card  className='client-detail' >
-        <CardHeader>
-            <Heading size='md'>{props.name}</Heading>
-        </CardHeader>
-        
-            <CardBody >
-            <Stack divider={<StackDivider />} spacing='4'>
-                <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                    INSTAGRAM
-                    </Heading>
-                    <Text pt='3' fontSize='md'>
-                    {user.instagram}
-                    </Text>
-                </Box>
-                <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                    ORGANIZAÇÃO
-                    </Heading>
-                    <Text pt='3' fontSize='md'>
-                    {user.organizacao}
-                    </Text>
-                </Box>
-                <Box>
-                    <Heading size='xs' textTransform='uppercase'>
-                    TELEFONE
-                    </Heading>
-                    <Text pt='3' fontSize='md'>
-                   {user.phone}
-                    </Text>
-                </Box>
-            </Stack>
-        </CardBody>
-        
-        
-    </Card>)  )
-       
-)
+        <div>
+            <Banner desc={ `${name} (Info)`}/>   
+            {name && (
+            <div className='user'>
+            <div className='user-info'>
+                <div className='user-info_name'>{name}</div>
+                <div className='user-info__org'> {organization} </div>            
+                <div className='user-info_instagram'> {instagram} </div>
+                <div className='user-info_phone'> {phone} </div>
+            </div>
+            </div>
+
+            )}
+        </div>
+            
+    )
 
 }
 
