@@ -14,11 +14,8 @@ import { useParams } from 'react-router-dom'
 import Banner from '../banner/index.js';
 import './client-detail-styles.css'
 
-const ClientDetail = (props) =>{
-    
-    const client_id = useParams(props.clientid)
-
-     
+const ClientDetail = (props) =>{    
+    const client_id = useParams(props.clientid)     
     const [name, setName] = useState('')
     const [instagram, setInstagram] = useState('')
     const [organization, setOrg] = useState('')
