@@ -9,9 +9,13 @@ import Banner from '../banner/index.js'
 
 const ListClients = () => {
     const [client, setClient] = useState();
-
-    useEffect(() => {
-        fetch(process.env.REACT_APP_API_URL_USERS).then((res) => {
+    const user_token = localStorage.getItem('token')
+    
+     useEffect(() => {
+        // fetch(process.env.REACT_APP_API_URL_USERS).then((res) => {
+        fetch('http://localhost:8000/clientes',
+        { headers: { 'Authorization' : `Bearer ${user_token}`} }
+        ).then((res) => { 
             return res.json();
         }).then((resp) => {
             setClient(resp);

@@ -45,12 +45,15 @@
 }
 
 .login-button{
+    display: flex;
    text-align: center;
    margin-top: 13px;
    background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);    
    color: #fff;
    padding: 15px;
    border-radius: 50px;
+   justify-content: center;
+   width: 100%;
 }
 
 .login-button:hover{
