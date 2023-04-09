@@ -55,18 +55,11 @@ const Jobs = (props) =>{
                         <Th style={{ "color":"#fff"}}>Descrição</Th>
                         <Th style={{ "color":"#fff"}}>Data</Th>
                         <Th isNumeric style={{"color":"#fff"}}> Valor</Th >
+                        <Th style={{ "color":"#fff"}}>Ação</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
-                {/* {job && ( job.map((job)=>(
-                    <Tr>
-                        <Td>{job.nome}</Td>
-                        <Td>{job.descricao} </Td>
-                        <Td>{job.valor}</Td>
-                        <Td>{job.data}</Td>
-                    </Tr>
-
-                ))  )}   */}
+                
 
                 {job && job.map((job) => (
                      <Tr key={job._id}>
@@ -74,8 +67,9 @@ const Jobs = (props) =>{
                         <Td>{job.descricao} </Td>
                         <Td>{job.data}</Td>
                         <Td>{job.valor}</Td>
+                        <Td>v</Td>
                      </Tr>
-                        // <Client key={client._id} name={client.nome} instagram={client.instagram} phone={client.telefone} org={client.organizacao} _id={client._id} />
+                    
 
                     ))}
                      

@@ -31,7 +31,8 @@ const AddClient = (props) =>{
   const [validation, setValidation] = useState(false)
   const navigate = useNavigate();
   
-   
+  
+  const user_token = localStorage.getItem('token')
  
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -40,7 +41,7 @@ const AddClient = (props) =>{
     const config = 
     {
       method:'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer ${user_token}` },
       body: JSON.stringify(cliente),
       cache: 'default',
       type: 'cors'
