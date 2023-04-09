@@ -25,8 +25,10 @@ const Login = () => {
         const responseLogin = await doLogin.json();       
         const token_user = await responseLogin.token        
         localStorage.setItem('token', token_user);
-
-        return token_user ? navigate('/clientes') : ''      
+        // window.location.reload()
+        
+        token_user ?  navigate('/clientes')  : window.location.reload()
+       window.location.reload()
     }
 
     return (

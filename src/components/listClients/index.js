@@ -25,7 +25,7 @@ const ListClients = () => {
 
     return (
         <>
-            <Header />
+            <Header index={true} />
             <Banner desc='Cadastro De Clientes' />
             <AddClient />
 
