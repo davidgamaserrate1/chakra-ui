@@ -14,7 +14,7 @@ const Login = () => {
     async function handleSubmit (e) {
         e.preventDefault();
         
-        const doLogin = await fetch('http://localhost:8000/users', {
+        const doLogin = await fetch(process.env.REACT_APP_LOGIN, {
             method: 'POST',
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             body: JSON.stringify(loginParams),
@@ -23,12 +23,16 @@ const Login = () => {
         })
         
         const responseLogin = await doLogin.json();       
-        const token_user = await responseLogin.token        
-        localStorage.setItem('token', token_user);
-        // window.location.reload()
+        const token_user = await responseLogin.token  
         
-        token_user ?  navigate('/clientes')  : window.location.reload()
-       window.location.reload()
+        if (token_user){
+            localStorage.setItem('token', token_user);
+            // window.location.reload()
+            
+            token_user ?  navigate('/clientes')  : window.location.reload()
+           window.location.reload()
+
+        } else alert('Login inválido')
     }
 
     return (
