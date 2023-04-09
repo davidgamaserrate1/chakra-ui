@@ -2,18 +2,16 @@
     display: flex;
     margin: -20px 250px;  
     text-align: left;
-    
+    justify-content: center;    
 }
 
 .user-info{
     background: linear-gradient(90deg, rgba(8,193,251,1) 15%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
     border-radius: 10px;
     color: #ffffff;     
-    padding: 10px;
-    align-items: center;
+    padding: 10px;     
     width: 20vw;
     text-align: center;
-
 }
 
 .user-info__org{
@@ -37,3 +35,12 @@
 }
 
 
+.table{
+    display: flex;
+    background: linear-gradient(90deg, rgba(8,193,251,1) 15%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
+    color: #fff;
+    margin: 40px 250px;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+}

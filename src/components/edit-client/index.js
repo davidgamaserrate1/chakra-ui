@@ -24,19 +24,20 @@ const EditClient =(props) =>{
     const [nome, setNome] = useState("")
     const [instagram, setInstagram] = useState("")
     const [telefone, setTelefone] = useState("")
-    const [organizacao, setOrganizacao] = useState("")
-    const [validation, setValidation] = useState(false)
+    const [organizacao, setOrganizacao] = useState("")    
+    const user_token = localStorage.getItem('token')
 
     
-    useEffect(( ) => {
-        fetch(process.env.REACT_APP_CLIENT + clientid).then((res) => {
+    useEffect(( ) => {        
+          fetch(process.env.REACT_APP_CLIENT + clientid,
+          {headers: { 'Authorization' : `Bearer ${user_token}`} }).then((res) => {          
             return res.json();
         }).then((resp) => {
             setNome(resp.nome)
             setInstagram(resp.instagram)
             setTelefone(resp.telefone)
             setOrganizacao(resp.organizacao)
-            setValidation(resp.validation)
+            
         }).catch((err) => {
             console.log(err.message)
         })
@@ -60,44 +61,46 @@ const EditClient =(props) =>{
 
     return(
         <MenuItem   onClick={onOpen}> Editar
-              
-             
-              
-        
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Adicionar Cliente</ModalHeader>
-          <ModalCloseButton />
-         
+          <ModalHeader>Editar Cliente</ModalHeader>
+          <ModalCloseButton />         
           <ModalBody pb={1}>
             <form className='form-add-client'>
-              <input className='form-add-client_name' type='name' placeholder='nome' 
-                value={nome} onChange={e=>setNome(e.target.value)}
+              <input className='form-add-client_name' 
+                type='name' 
+                placeholder='nome' 
+                value={nome} 
+                onChange={e=>setNome(e.target.value)}
               />
-              <input className='form-add-client_instagram' type='text' placeholder='@instagram' 
+              <input className='form-add-client_instagram' 
+                type='text' 
+                placeholder='@instagram' 
                 value={instagram}
                 onChange={e=>setInstagram(e.target.value)}/>
-              <input className='form-add-client_phone' type='phone' placeholder='telefone'
+              <input className='form-add-client_phone' 
+                type='phone' 
+                placeholder='telefone'
                 value={telefone}
                 onChange={e=>setTelefone(e.target.value)}
               />
-              <input className='form-add-client_org' type='text' placeholder='organização' 
+              <input className='form-add-client_org' 
+                type='text' 
+                placeholder='organização' 
                 value={organizacao}
                 onChange={e=>setOrganizacao(e.target.value)}
               />
             </form>
           </ModalBody>
-
           <ModalFooter>
             <Button colorScheme='pink' mr={3} onClick={updateClient}>
-              Save
+              Salvar
             </Button>
-            <Button onClick={onClose}>Cancel</Button>
+            <Button onClick={onClose}>Cancelar</Button>
           </ModalFooter>
         </ModalContent>
-      </Modal>
-     
+      </Modal>     
     </MenuItem>
     )
 }

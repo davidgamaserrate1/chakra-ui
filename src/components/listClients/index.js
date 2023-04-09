@@ -12,9 +12,8 @@ const ListClients = () => {
     const user_token = localStorage.getItem('token')
     
      useEffect(() => {
-        // fetch(process.env.REACT_APP_API_URL_USERS).then((res) => {
-        fetch('http://localhost:8000/clientes',
-        { headers: { 'Authorization' : `Bearer ${user_token}`} }
+        fetch(process.env.REACT_APP_API_URL_USERS,
+            { headers: { 'Authorization' : `Bearer ${user_token}`} }
         ).then((res) => { 
             return res.json();
         }).then((resp) => {
@@ -24,16 +23,13 @@ const ListClients = () => {
         })
     }, [])
 
-
-
     return (
         <>
             <Header />
             <Banner desc='Cadastro De Clientes' />
             <AddClient />
 
-            <div className='list-clients-container'>
-                {/* <ButtonAdd  name='Opções'/> */}
+            <div className='list-clients-container'>                
                 <div className='list-clients-table'>
                     <div className='list-clients-head'>
                         <div className='list-clients-data__name'>NOME</div>

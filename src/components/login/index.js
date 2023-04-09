@@ -7,28 +7,9 @@ const Login = () => {
     const navigate = useNavigate();
     const [login,  setLogin]=useState("")
     const [password, setPassword]=useState("")
-    const [token, setToken]=useState("")
  
-    const loginParams = { login, password }
-    
-    // const handleSubmit = async(e) =>{
-    //     e.preventDefault();
-        
-    //     await fetch('http://localhost:8000/users', {
-    //         method: 'POST',
-    //         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(loginParams),
-    //         cache: 'default',
-    //         type: 'cors'
-    //     }).then(
-    //         (response) => response.json()
-    //     ).then((data) =>{               
-    //         setToken(data.token)                 
-    //             localStorage.setItem('token', token);    
-           
-    //     });
-    //     //navigate('/clientes')
-    // }
+    const loginParams = { login, password }    
+   
 
     async function handleSubmit (e) {
         e.preventDefault();
@@ -45,17 +26,7 @@ const Login = () => {
         const token_user = await responseLogin.token        
         localStorage.setItem('token', token_user);
 
-        return token_user ? navigate('/clientes') : ''
-        //setToken(responseLogin.token)  
-
-        // .then(
-        //     (response) => response.json()
-        // ).then((data) =>{               
-        //     setToken(data.token)                 
-        //         localStorage.setItem('token', token);    
-           
-        // });
-        //navigate('/clientes')
+        return token_user ? navigate('/clientes') : ''      
     }
 
     return (

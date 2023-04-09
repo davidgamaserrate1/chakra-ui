@@ -26,7 +26,7 @@
     text-decoration: underline #e70052 ;     
     padding: 0 3px;
     transform: 0.3s;
-    border-radius: 5px;
+   
 }
 
 .header-top{
@@ -37,3 +37,11 @@
 
 
 
+.header-back{
+    position: absolute;
+    left: 250px;
+    top: 100px;
+    background:  #e70052 ;     
+    padding: 5px;
+    border-radius: 10px;
+}

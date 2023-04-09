@@ -1,17 +1,14 @@
  
 import './client-styles.css'
-import { ExpandMore } from '@mui/icons-material'  
 import EditClient from '../edit-client/index.js'
-import ClientDetail from '../client-detail/index.js'
-
+import { ExpandMore } from '@mui/icons-material'  
+import { Link } from 'react-router-dom'
 import {
     Menu,
     MenuButton,
     MenuList,
-    MenuItem,
-    
-  } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+    MenuItem,    
+} from '@chakra-ui/react'
 
    
  const deleteUser=(id)=>{
@@ -33,7 +30,10 @@ const Client = (props) =>{
             <div className='cliente__phone'> {props.phone} </div>
             <div className='cliente__org'>{props.org} </div>
             <Menu  className='cliente__action'>
-                <MenuButton   className='menuButton' > <ExpandMore  /> </MenuButton>
+                <MenuButton   className='menuButton' >
+                    <ExpandMore/>
+                </MenuButton>
+
                 <MenuList className='menuList' >
                     <MenuItem  className='menuItem' >  
                     <EditClient
@@ -45,12 +45,11 @@ const Client = (props) =>{
                     />                    
                     </MenuItem >
                     <MenuItem  className='menuItem' >
-                        <Link to={{pathname : `/clientes/${props._id}`, state: props._id }}   >  Detalhes</Link>       
+                        <Link to={{pathname : `/clientes/${props._id}`, state: props._id }}>  Detalhes</Link>       
                     </MenuItem>
                     <div onClick={() => { deleteUser(props._id) }}>
                         <MenuItem  className='menuItem' >Remover</MenuItem>
-                    </div>
-                                       
+                    </div>                                       
                 </MenuList>
             </Menu>
         </div>
