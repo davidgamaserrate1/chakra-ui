@@ -9,7 +9,7 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon,createMultiStyleConfigHelpers, Box,defineStyle 
+    AccordionIcon,Box, 
 } from '@chakra-ui/react'
  
 
@@ -42,17 +42,17 @@ const ClientDetail = (props) =>{
             <Header/>
             <Banner desc={ `${name} (Info)`}/>  
             
-            <Accordion style={{ 'display': 'flex', 'justify-content': 'center',}} variant="simple" allowToggle>
+            <Accordion style={{ 'display': 'flex', 'justifyContent': 'center','marginTop':'-100px'}} variant="simple" allowToggle>
                 <AccordionItem>
                 <h2>
                     <AccordionButton style={{
                         "color":"#fff",
                         "background": "linear-gradient(90deg, rgba(8,193,251,1) 15%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%)",
-                        'border-radius': '10px',
+                        'borderRadius': '10px',
                         'color': '#ffffff',     
                         'padding': '10px',
-                        'justify-content': 'center',
-                        'text-align': 'center'
+                        'justifyContent': 'center',
+                        'textAlign': 'center'
                     }}>
                     <Box as="span" flex='1' textAlign='center'>
                         {name}
@@ -69,7 +69,7 @@ const ClientDetail = (props) =>{
                 </AccordionPanel>
                 </AccordionItem>
             </Accordion>
-            <Jobs/>
+            <Jobs client_id={client_id}/>
         </>
             
     )

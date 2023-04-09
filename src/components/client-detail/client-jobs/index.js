@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import '../client-detail-styles.css'
 import {
     Table,
     Thead,
@@ -8,73 +10,91 @@ import {
     Td,
     TableCaption,
     TableContainer,Box,
-  } from '@chakra-ui/react'
-
-  import {
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-  } from '@chakra-ui/react'
-
-import Header from '../../header/index.js'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import Banner from '../../banner/index.js'
-import '../client-detail-styles.css'
+  } from '@chakra-ui/react' 
+  
+const Jobs = (props) =>{
+    const [job, setJob] = useState('');
  
-import { accordionAnatomy } from '@chakra-ui/anatomy'
-import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
- 
-
-const Jobs = () =>{
-
+    const id_client = props.client_id    
+    const user_token = localStorage.getItem('token')
+   
+    
+    useEffect(() => {
+        fetch('https://apiclientes.vercel.app/servico/6413e312aacfd36c04ab3d8a',
+        {headers:{Authorization: `Bearer ${user_token}`}}
+        ).then((res) => {
+            return res.json();
+        }).then((resp) => {
+            setJob( resp )            
+        }).catch((err) => {
+            console.log(err.message)
+        })
+    }, [])  
+    
+    
+    function getTotal() {
+        let totalFromUser = 0
+        for(let i = 0 ; i < job.length; i++){
+            totalFromUser += job[i].valor
+        }
+        return totalFromUser
+    }
+    
+    let totalFromUser = getTotal()
+    
 
     return(
         <> 
-        <div className='table'>
-            <TableContainer >
+         
+            <div className='table'>
+            <TableContainer className='table-container'>
             <Table>                
                 <Thead>
                     <Tr >
                     <Th style={{ "color":"#fff",}}>Arte</Th>
                         <Th style={{ "color":"#fff"}}>Descrição</Th>
-                        <Th isNumeric style={{"color":"#fff"}}> Valor</Th >
                         <Th style={{ "color":"#fff"}}>Data</Th>
+                        <Th isNumeric style={{"color":"#fff"}}> Valor</Th >
                     </Tr>
                 </Thead>
                 <Tbody>
+                {/* {job && ( job.map((job)=>(
                     <Tr>
-                        <Td>Concept</Td>
-                        <Td>concept </Td>
-                        <Td isNumeric>25.4</Td>
-                        <Td isNumeric>25.4</Td>
+                        <Td>{job.nome}</Td>
+                        <Td>{job.descricao} </Td>
+                        <Td>{job.valor}</Td>
+                        <Td>{job.data}</Td>
                     </Tr>
-                    <Tr>
-                        <Td>feet</Td>
-                        <Td>centimetres (cm)</Td>
-                        <Td isNumeric>30.48</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>yards</Td>
-                        <Td>metres (m)</Td>
-                        <Td isNumeric>0.91444</Td>
-                        <Td isNumeric>0.91444</Td>
-                    </Tr>
+
+                ))  )}   */}
+
+                {job && job.map((job) => (
+                     <Tr key={job._id}>
+                        <Td>{job.nome}</Td>
+                        <Td>{job.descricao} </Td>
+                        <Td>{job.data}</Td>
+                        <Td>{job.valor}</Td>
+                     </Tr>
+                        // <Client key={client._id} name={client.nome} instagram={client.instagram} phone={client.telefone} org={client.organizacao} _id={client._id} />
+
+                    ))}
+                     
                 </Tbody>
                 <Tfoot>
-                <Tr>defalt
+                <Tr> 
                     <Th style={{ "color":"#fff",}}>total</Th>
                     <Th> </Th>
                     <Th> </Th>
-                    <Th style={{ "color":"#fff",}}>1 </Th>
+                    <Th style={{ "color":"#fff",}}> {totalFromUser} </Th>
+                     
                 </Tr>
                 </Tfoot>
             </Table>
-            </TableContainer>
+            </TableContainer> 
 
         </div>
+        
+        
         
     </>
     )
