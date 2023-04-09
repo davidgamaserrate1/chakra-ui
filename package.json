@@ -20,7 +20,7 @@
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.8",
-    "vercel": "^28.16.15",
+    "vercel": "^28.18.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
