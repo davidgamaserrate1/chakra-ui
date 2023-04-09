@@ -11,28 +11,53 @@ const Login = () => {
  
     const loginParams = { login, password }
     
-    const handleSubmit = async(e) =>{
-        e.preventDefault();
-        await doLogin(); 
-        await navigate('/clientes');            
+    // const handleSubmit = async(e) =>{
+    //     e.preventDefault();
         
-    }
+    //     await fetch('http://localhost:8000/users', {
+    //         method: 'POST',
+    //         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    //         body: JSON.stringify(loginParams),
+    //         cache: 'default',
+    //         type: 'cors'
+    //     }).then(
+    //         (response) => response.json()
+    //     ).then((data) =>{               
+    //         setToken(data.token)                 
+    //             localStorage.setItem('token', token);    
+           
+    //     });
+    //     //navigate('/clientes')
+    // }
 
-    function doLogin (){
-        fetch('http://localhost:8000/users', {
+    async function handleSubmit (e) {
+        e.preventDefault();
+        
+        const doLogin = await fetch('http://localhost:8000/users', {
             method: 'POST',
             headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             body: JSON.stringify(loginParams),
             cache: 'default',
             type: 'cors'
-        }).then(
-            (response) => response.json()
-        ).then((data) =>{               
-            setToken(data.token)                 
-             localStorage.setItem('token', token);    
-            //  navigate('/clientes')
-        });
+        })
+        
+        const responseLogin = await doLogin.json();       
+        const token_user = await responseLogin.token        
+        localStorage.setItem('token', token_user);
+
+        return token_user ? navigate('/clientes') : ''
+        //setToken(responseLogin.token)  
+
+        // .then(
+        //     (response) => response.json()
+        // ).then((data) =>{               
+        //     setToken(data.token)                 
+        //         localStorage.setItem('token', token);    
+           
+        // });
+        //navigate('/clientes')
     }
+
     return (
         <div className="login-container">            
             <div className="login-card">
