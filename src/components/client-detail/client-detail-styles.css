@@ -32,5 +32,10 @@
 .table-container{
     padding: 8px;
     border:solid 1px;
-    border-radius:0px 20px 0px 20px;
+    border-radius:20px;
+}
+
+#menu-item{
+    color:'#fff';
+    background:'red';
 }

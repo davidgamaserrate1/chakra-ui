@@ -40,7 +40,7 @@ const ClientDetail = (props) =>{
     return(
         <>
             <Header/>
-            <Banner desc={ `${name} (Info)`}/>  
+            <Banner  />  
             
             <Accordion style={{ 'display': 'flex', 'justifyContent': 'center','marginTop':'-100px'}} variant="simple" allowToggle>
                 <AccordionItem>

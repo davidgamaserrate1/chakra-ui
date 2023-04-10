@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 import '../client-detail-styles.css'
+import AddJob from '../add-jobs/index.js'
+import  {ChevronDownIcon }from '@chakra-ui/icons'
+
 import {
     Table,
     Thead,
@@ -10,8 +13,28 @@ import {
     Td,
     TableCaption,
     TableContainer,Box,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure,
+    Button
   } from '@chakra-ui/react' 
   
+  import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+  } from '@chakra-ui/react'
+   
 const Jobs = (props) =>{
     const [job, setJob] = useState('');
  
@@ -40,13 +63,19 @@ const Jobs = (props) =>{
         return totalFromUser
     }
     
-    let totalFromUser = getTotal()
-    
+    let totalFromUser = getTotal()   
 
     return(
         <> 
-         
-            <div className='table'>
+        <>
+        
+        
+        <AddJob cliente_id={id_client}/>
+        
+
+        
+        </>
+        <div className='table'>            
             <TableContainer className='table-container'>
             <Table>                
                 <Thead>
@@ -59,39 +88,41 @@ const Jobs = (props) =>{
                     </Tr>
                 </Thead>
                 <Tbody>
-                
-
                 {job && job.map((job) => (
                      <Tr key={job._id}>
                         <Td>{job.nome}</Td>
                         <Td>{job.descricao} </Td>
                         <Td>{job.data}</Td>
                         <Td>{job.valor}</Td>
-                        <Td>v</Td>
+                        <Td>
+                            <Menu>
+                                <MenuButton style={{background:'rgba(255,112,186,1)'}} as={Button} rightIcon={<ChevronDownIcon />}>                            
+                                </MenuButton>
+                                <MenuList style={{background:'rgba(255,112,186,1)'}}>
+                                    <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}}>
+                                        Editar
+                                    </MenuItem>
+                                    <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}}>
+                                        Remover
+                                    </MenuItem>                                
+                                </MenuList>
+                            </Menu>                       
+                        </Td>
                      </Tr>
-                    
-
-                    ))}
-                     
+                ))}                     
                 </Tbody>
                 <Tfoot>
                 <Tr> 
                     <Th style={{ "color":"#fff",}}>total</Th>
                     <Th> </Th>
                     <Th> </Th>
-                    <Th style={{ "color":"#fff",}}> {totalFromUser} </Th>
-                     
+                    <Th style={{ "color":"#fff",}}> {totalFromUser} </Th>                     
                 </Tr>
                 </Tfoot>
             </Table>
             </TableContainer> 
-
         </div>
-        
-        
-        
-    </>
-    )
+    </>)
 }
 
 export default Jobs

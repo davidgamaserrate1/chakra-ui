@@ -10,10 +10,11 @@ import {
     MenuItem,    
 } from '@chakra-ui/react'
 
-   
+ const user_token = localStorage.getItem('token')
+
  const deleteUser=(id)=>{
     if(window.confirm('Tem certeza que deseja remover este cliente ?')){
-      fetch(process.env.REACT_APP_CLIENT+id, {method:'DELETE'} ).then((res)=>{
+      fetch(process.env.REACT_APP_CLIENT+id, {method:'DELETE', headers:{authorization : `Bearer ${user_token}`}} ).then((res)=>{
         window.location.reload();
       }).catch((err) => {
         console.log(err + ' resp : ' + err.message)
