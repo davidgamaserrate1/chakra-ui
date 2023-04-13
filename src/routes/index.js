@@ -9,9 +9,6 @@ const user_token = localStorage.getItem('token')
 const RoutesApp = () => {
     return (
         <>
-        
-
-       
             {!user_token ? 
                 <BrowserRouter> 
                 <Routes>
