@@ -35,7 +35,7 @@ const Client = (props) =>{
                     <ExpandMore/>
                 </MenuButton>
 
-                <MenuList className='menuList' >
+                <MenuList minWidth="40px" className='menuList' >
                     <MenuItem  className='menuItem' >  
                     <EditClient
                         name={props.name}

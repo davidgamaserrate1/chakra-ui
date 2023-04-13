@@ -35,7 +35,7 @@ const AddJob = (props) =>{
           body: JSON.stringify(job)           
         }
       
-        fetch('https://apiclientes.vercel.app/servico/adicionar/' +cliente_id,
+        fetch(process.env.REACT_APP_ADD_JOB + cliente_id,
         config)
           .then((res)=>{
           window.location.reload();

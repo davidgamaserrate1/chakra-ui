@@ -1,4 +1,3 @@
- 
 import {
     Modal,
     ModalOverlay,
@@ -12,21 +11,21 @@ import {
     MenuItem
   } from "@chakra-ui/react";
 import { useState,useEffect } from "react";
- 
 
 const EditJob = (props) =>{
+    let { isOpen,  onOpen, onClose } = useDisclosure()
+
     const cliente_id = props.cliente_id.clientid;    
     const user_token = localStorage.getItem('token');
     const job_id = props.job_id
 
-    let { isOpen,  onOpen, onClose } = useDisclosure()
     const [nome, setNome] = useState('')
     const [descricao, setDescricao] = useState('')
     const [data, setData] = useState('')
     const [valor, setValor] = useState('')     
     
     useEffect(( ) => {        
-        fetch('https://apiclientes.vercel.app/servico/editar/' + job_id,
+        fetch(process.env.REACT_APP_EDIT_JOB + job_id,
         {headers: { 'Authorization' : `Bearer ${user_token}`} }).then((res) => {          
           return res.json();
       }).then((resp) => {        
@@ -38,13 +37,12 @@ const EditJob = (props) =>{
       }).catch((err) => {
           console.log(err.message)
       })
-  }, [])
+    }, [])
 
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        const job = { nome, descricao, data, valor, cliente_id };
-        console.log(job)
+        const job = { nome, descricao, data, valor, cliente_id };        
         const config = 
         {
           method:'PUT',
@@ -52,7 +50,7 @@ const EditJob = (props) =>{
           body: JSON.stringify(job)           
         }
       
-        fetch('https://apiclientes.vercel.app/servico/editar/' +job_id,
+        fetch(process.env.REACT_APP_EDIT_JOB  +job_id,
         config)
           .then((res)=>{
             window.location.reload();
@@ -61,8 +59,7 @@ const EditJob = (props) =>{
     }
 
     return(
-      <div className='add-client'>
-        <MenuItem   onClick={onOpen}> Editar
+        <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)' }}  onClick={onOpen}> Editar
             <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
@@ -96,8 +93,6 @@ const EditJob = (props) =>{
             </ModalContent>
             </Modal>
         </MenuItem>
-
-      </div>
     )
 }
 

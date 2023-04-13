@@ -47,7 +47,7 @@ const Jobs = (props) =>{
         const config = { method:'DELETE',headers: {  'Authorization': `Bearer ${user_token}` } }
       
         if(window.confirm('Tem certeza que deseja remover este serviço ?')){
-            fetch('https://apiclientes.vercel.app/servico/' + id ,config).then((res)=>{
+            fetch(process.env.REACT_APP_JOBS + id ,config).then((res)=>{
                 window.location.reload();
             }).catch((err) => {
                 console.log(err + ' resp : ' + err.message)
@@ -56,7 +56,7 @@ const Jobs = (props) =>{
     }
 
     useEffect(() => {
-        fetch('https://apiclientes.vercel.app/servico/6413e312aacfd36c04ab3d8a',//+ id_client
+        fetch(process.env.REACT_APP_JOBS + '6413e312aacfd36c04ab3d8a',//+ id_client
         {headers:{Authorization: `Bearer ${user_token}`}}
         ).then((res) => {
             return res.json();
@@ -100,25 +100,27 @@ const Jobs = (props) =>{
                         <Tr key={job._id}>
                             <Td>{job.nome}</Td>
                             <Td>{job.descricao} </Td>
-                            <Td>{job.jobdata}</Td>
+                            <Td>{job.data}</Td>
                             <Td>R$ {job.valor}</Td>
                             <Td>
                                 <Menu>
                                     <MenuButton style={{background:'rgba(255,112,186,1)'}} as={Button} rightIcon={<ChevronDownIcon />}>                            
                                     </MenuButton>
-                                    <MenuList style={{background:'rgba(255,112,186,1)'}}>
-                                        <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}}>
+                                    <MenuList minWidth="60px" style={{background:'rgba(255,112,186,1)', padding:'5px'}}>
+                                        <MenuItem   style={{color:'#fff',background:'rgba(255,112,186,1)'}}>
                                              
-                                            <EditJob
-                                                job_id={job._id}
-                                                cliente_id ={id_client}
-                                                nome={job.nome}
-                                                descricao={job.descricao} 
-                                                data={job.jobdata}
-                                                valor= {job.valor}                                                 
-                                            />
+                                            <div className='edit-job'>
+                                                <EditJob
+                                                    job_id={job._id}
+                                                    cliente_id ={id_client}
+                                                    nome={job.nome}
+                                                    descricao={job.descricao} 
+                                                    data={job.jobdata}
+                                                    valor= {job.valor}                                                 
+                                                />
+                                            </div>
                                         </MenuItem>
-                                        <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}} 
+                                        <MenuItem maxWidth="40px" style={{color:'#fff',background:'rgba(255,112,186,1)'}} 
                                             onClick={() => { deleteJob(job._id) }}
                                             >
                                             Remover
