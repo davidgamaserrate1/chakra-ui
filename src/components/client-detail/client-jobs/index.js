@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import '../client-detail-styles.css'
 import AddJob from '../add-jobs/index.js'
 import  {ChevronDownIcon }from '@chakra-ui/icons'
+import  EditJob from '../edit-jobs/index.js'
 
 import {
     Table,
@@ -40,10 +41,22 @@ const Jobs = (props) =>{
  
     const id_client = props.client_id    
     const user_token = localStorage.getItem('token')
-   
     
+
+    const deleteJob =(id)=>{
+        const config = { method:'DELETE',headers: {  'Authorization': `Bearer ${user_token}` } }
+      
+        if(window.confirm('Tem certeza que deseja remover este serviço ?')){
+            fetch('https://apiclientes.vercel.app/servico/' + id ,config).then((res)=>{
+                window.location.reload();
+            }).catch((err) => {
+                console.log(err + ' resp : ' + err.message)
+            })
+        }
+    }
+
     useEffect(() => {
-        fetch('https://apiclientes.vercel.app/servico/6413e312aacfd36c04ab3d8a',
+        fetch('https://apiclientes.vercel.app/servico/6413e312aacfd36c04ab3d8a',//+ id_client
         {headers:{Authorization: `Bearer ${user_token}`}}
         ).then((res) => {
             return res.json();
@@ -67,61 +80,66 @@ const Jobs = (props) =>{
 
     return(
         <> 
-        <>
-        
-        
-        <AddJob cliente_id={id_client}/>
-        
-
-        
-        </>
-        <div className='table'>            
-            <TableContainer className='table-container'>
-            <Table>                
-                <Thead>
-                    <Tr >
-                    <Th style={{ "color":"#fff",}}>Arte</Th>
-                        <Th style={{ "color":"#fff"}}>Descrição</Th>
-                        <Th style={{ "color":"#fff"}}>Data</Th>
-                        <Th isNumeric style={{"color":"#fff"}}> Valor</Th >
-                        <Th style={{ "color":"#fff"}}>Ação</Th>
+            <div>
+                <AddJob cliente_id={id_client}/>            
+            </div>
+            <div className='table'>            
+                <TableContainer className='table-container'>
+                <Table>                
+                    <Thead>
+                        <Tr >
+                        <Th style={{ "color":"#fff",}}>Arte</Th>
+                            <Th style={{ "color":"#fff"}}>Descrição</Th>
+                            <Th style={{ "color":"#fff"}}>Data</Th>
+                            <Th isNumeric style={{"color":"#fff"}}> Valor</Th >
+                            <Th style={{ "color":"#fff"}}>Ação</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                    {job && job.map((job) => (
+                        <Tr key={job._id}>
+                            <Td>{job.nome}</Td>
+                            <Td>{job.descricao} </Td>
+                            <Td>{job.jobdata}</Td>
+                            <Td>R$ {job.valor}</Td>
+                            <Td>
+                                <Menu>
+                                    <MenuButton style={{background:'rgba(255,112,186,1)'}} as={Button} rightIcon={<ChevronDownIcon />}>                            
+                                    </MenuButton>
+                                    <MenuList style={{background:'rgba(255,112,186,1)'}}>
+                                        <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}}>
+                                             
+                                            <EditJob
+                                                job_id={job._id}
+                                                cliente_id ={id_client}
+                                                nome={job.nome}
+                                                descricao={job.descricao} 
+                                                data={job.jobdata}
+                                                valor= {job.valor}                                                 
+                                            />
+                                        </MenuItem>
+                                        <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}} 
+                                            onClick={() => { deleteJob(job._id) }}
+                                            >
+                                            Remover
+                                        </MenuItem>                                
+                                    </MenuList>
+                                </Menu>                       
+                            </Td>
+                        </Tr>
+                    ))}                     
+                    </Tbody>
+                    <Tfoot>
+                    <Tr> 
+                        <Th style={{ "color":"#fff",}}>total</Th>
+                        <Th> </Th>
+                        <Th> </Th>
+                        <Th style={{ "color":"#fff","textDecoration":"underline"}}>R$ {totalFromUser} </Th>                     
                     </Tr>
-                </Thead>
-                <Tbody>
-                {job && job.map((job) => (
-                     <Tr key={job._id}>
-                        <Td>{job.nome}</Td>
-                        <Td>{job.descricao} </Td>
-                        <Td>{job.data}</Td>
-                        <Td>{job.valor}</Td>
-                        <Td>
-                            <Menu>
-                                <MenuButton style={{background:'rgba(255,112,186,1)'}} as={Button} rightIcon={<ChevronDownIcon />}>                            
-                                </MenuButton>
-                                <MenuList style={{background:'rgba(255,112,186,1)'}}>
-                                    <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}}>
-                                        Editar
-                                    </MenuItem>
-                                    <MenuItem style={{color:'#fff',background:'rgba(255,112,186,1)'}}>
-                                        Remover
-                                    </MenuItem>                                
-                                </MenuList>
-                            </Menu>                       
-                        </Td>
-                     </Tr>
-                ))}                     
-                </Tbody>
-                <Tfoot>
-                <Tr> 
-                    <Th style={{ "color":"#fff",}}>total</Th>
-                    <Th> </Th>
-                    <Th> </Th>
-                    <Th style={{ "color":"#fff",}}> {totalFromUser} </Th>                     
-                </Tr>
-                </Tfoot>
-            </Table>
-            </TableContainer> 
-        </div>
+                    </Tfoot>
+                </Table>
+                </TableContainer> 
+            </div>
     </>)
 }
 

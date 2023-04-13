@@ -1,4 +1,4 @@
-import './add-jobs-styles.css'
+import './jobs-styles.css'
 import {
     Modal,
     ModalOverlay,
@@ -34,15 +34,14 @@ const AddJob = (props) =>{
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json', 'Authorization': `Bearer ${user_token}` },
           body: JSON.stringify(job)           
         }
-        console.log(job)
-        fetch('https://apiclientes.vercel.app/servico/adicionar/6413e312aacfd36c04ab3d8a',
+      
+        fetch('https://apiclientes.vercel.app/servico/adicionar/' +cliente_id,
         config)
           .then((res)=>{
           window.location.reload();
         })
 
     }
-
 
     return(
       <div className='add-client'>
