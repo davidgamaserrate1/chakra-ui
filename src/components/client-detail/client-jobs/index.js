@@ -25,6 +25,8 @@ const Jobs = (props) =>{
     const [job, setJob] = useState('');
  
     const id_client = props.client_id.clientid      
+
+    
     const user_token = localStorage.getItem('token')
     
 

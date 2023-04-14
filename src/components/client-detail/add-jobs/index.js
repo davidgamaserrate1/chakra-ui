@@ -14,13 +14,14 @@ import { useState } from "react";
  
 
 const AddJob = (props) =>{
+ 
     let { isOpen,  onOpen, onClose } = useDisclosure()
     const [nome, setNome] = useState('')
     const [descricao, setDescricao] = useState('')
     const [data, setData] = useState('')
     const [valor, setValor] = useState('')
 
-    const cliente_id = props.cliente_id.clientid;
+    const cliente_id = props.cliente_id;
     
     const user_token = localStorage.getItem('token')
 
@@ -42,7 +43,8 @@ const AddJob = (props) =>{
         })
 
     }
-
+    console.log(cliente_id)
+     
     return(
       <div className='add-client'>
         <Button onClick={onOpen}  colorScheme='pink'>Adicionar</Button>
