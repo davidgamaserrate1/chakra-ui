@@ -1,4 +1,4 @@
-import './jobs-styles.css'
+ 
 import {
     Modal,
     ModalOverlay,

@@ -71,7 +71,8 @@ const AddClient = (props) =>{
               />
               <input className='form-add-client_instagram' type='text' placeholder='@instagram' 
                 value={instagram}
-                onChange={e=>setInstagram(e.target.value)}/>
+                onChange={e=>setInstagram(e.target.value)}
+                />
               <input className='form-add-client_phone' type='phone' placeholder='telefone'
                 value={telefone}
                 onChange={e=>setTelefone(e.target.value)}

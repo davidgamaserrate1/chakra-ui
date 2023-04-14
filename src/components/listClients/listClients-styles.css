@@ -1,24 +1,16 @@
 .list-clients-master{
-    
-}
-.list-client{
     width: 100vw;
-     
-     
-
-    
-}
-
-.list-clients-container{
-    
-     
-    width: 100vw;
-    display: flex;     
- 
-    height:  calc(100vh - (250px + 100px + 32px));
-    background:url('../../assets/fundo-detalhado.png') ;
-    background-position:  bottom   !important;
+    display: flex;         
     flex-direction: column;
+    background:url('../../assets/fundo-detalhado.png') ,  #fff !important;
+    
+}
+ 
+.list-clients-container{    
+    width: 100%;
+    background-position: -130px bottom   !important;
+    background-repeat:repeat ;
+    height: 65vh;
 }
 
 .list-clients-table{
@@ -29,7 +21,6 @@
     margin: 0  250px ;
     position: relative;
     flex-wrap: wrap; 
-   
 }
 
 .list-clients-head{

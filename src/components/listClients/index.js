@@ -24,32 +24,28 @@ const ListClients = () => {
     }, [])
 
     return (
-        <> 
+        <div  className='list-clients-master'> 
             <Header index={true} />
             <Banner desc='Cadastro De Clientes' />
             <AddClient />
+                <div className='list-clients-container'>                
+                    <div className='list-client'>
+                        <div className='list-clients-table'>
+                            <div className='list-clients-head'>
+                                <div className='list-clients-data__name'>NOME</div>
+                                <div className='list-clients-data__instagram'>INSTAGRAM</div>
+                                <div className='list-clients-data__tel'>TELEFONE</div>
+                                <div className='list-clients-data__org'>Organização</div>
+                                <div className='list-clients-data__action'>Ação </div>
+                            </div>
+                            {client && client.map((client) => (
+                                <Client key={client._id} name={client.nome} instagram={client.instagram} phone={client.telefone} org={client.organizacao} _id={client._id} />
 
-           
-            <div className='list-clients-container'>                
-                <div className='list-client'>
-                    <div className='list-clients-table'>
-                        <div className='list-clients-head'>
-                            <div className='list-clients-data__name'>NOME</div>
-                            <div className='list-clients-data__instagram'>INSTAGRAM</div>
-                            <div className='list-clients-data__tel'>TELEFONE</div>
-                            <div className='list-clients-data__org'>Organização</div>
-                            <div className='list-clients-data__action'>Ação </div>
+                            ))}
                         </div>
-                        {client && client.map((client) => (
-                            <Client key={client._id} name={client.nome} instagram={client.instagram} phone={client.telefone} org={client.organizacao} _id={client._id} />
-
-                        ))}
                     </div>
                 </div>
-            </div>
-
-        
-        </>
+        </div>
     )
 }
 

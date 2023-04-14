@@ -1,7 +1,6 @@
 .client-detail{
     width: 100vw;
-    display: flex;     
-    
+    display: flex;         
     flex-direction: column;
     background:url('../../assets/fundo-detalhado.png') ,  #fff !important;
 }
