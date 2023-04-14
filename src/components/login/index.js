@@ -1,6 +1,7 @@
 import './login-styles.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import gatinho  from '../../assets/gato.png'
 
 
 const Login = () => {
@@ -27,16 +28,14 @@ const Login = () => {
         
         if (token_user){
             localStorage.setItem('token', token_user);
-            // window.location.reload()
-            
             token_user ?  navigate('/clientes')  : window.location.reload()
            window.location.reload()
 
         } else alert('Login inválido')
     }
-
     return (
-        <div className="login-container">            
+        <div className="login-container" style={{'backgroundImage': `url(${gatinho})`}}>    
+
             <div className="login-card">
                 <img className='login__logo' src= '/static/media/logo.0f09a3bd7f34cd191329.png'/>
                 <div className='login__login'>Login</div>
