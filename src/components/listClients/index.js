@@ -3,7 +3,7 @@ import Client from '../client/index.js'
 import { useEffect, useState } from 'react'
 import AddClient from '../add-client/index.js'
 import './listClients-styles.css'
-import Header from '../header/index.js'
+import Header    from '../header/index.js'
 import Banner from '../banner/index.js'
 
 
@@ -24,26 +24,31 @@ const ListClients = () => {
     }, [])
 
     return (
-        <>
+        <> 
             <Header index={true} />
             <Banner desc='Cadastro De Clientes' />
             <AddClient />
 
+           
             <div className='list-clients-container'>                
-                <div className='list-clients-table'>
-                    <div className='list-clients-head'>
-                        <div className='list-clients-data__name'>NOME</div>
-                        <div className='list-clients-data__instagram'>INSTAGRAM</div>
-                        <div className='list-clients-data__tel'>TELEFONE</div>
-                        <div className='list-clients-data__org'>Organização</div>
-                        <div className='list-clients-data__action'>Ação </div>
-                    </div>
-                    {client && client.map((client) => (
-                        <Client key={client._id} name={client.nome} instagram={client.instagram} phone={client.telefone} org={client.organizacao} _id={client._id} />
+                <div className='list-client'>
+                    <div className='list-clients-table'>
+                        <div className='list-clients-head'>
+                            <div className='list-clients-data__name'>NOME</div>
+                            <div className='list-clients-data__instagram'>INSTAGRAM</div>
+                            <div className='list-clients-data__tel'>TELEFONE</div>
+                            <div className='list-clients-data__org'>Organização</div>
+                            <div className='list-clients-data__action'>Ação </div>
+                        </div>
+                        {client && client.map((client) => (
+                            <Client key={client._id} name={client.nome} instagram={client.instagram} phone={client.telefone} org={client.organizacao} _id={client._id} />
 
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
+
+        
         </>
     )
 }

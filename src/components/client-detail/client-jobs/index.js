@@ -12,34 +12,19 @@ import {
     Tr,
     Th,
     Td,
-    TableCaption,
-    TableContainer,Box,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    useDisclosure,
-    Button
-  } from '@chakra-ui/react' 
-  
-  import {
+    TableContainer,
+    Button,
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
-  } from '@chakra-ui/react'
-   
+  } from '@chakra-ui/react' 
+  
+ 
 const Jobs = (props) =>{
     const [job, setJob] = useState('');
  
-    const id_client = props.client_id    
+    const id_client = props.client_id.clientid      
     const user_token = localStorage.getItem('token')
     
 
@@ -56,8 +41,7 @@ const Jobs = (props) =>{
     }
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_JOBS + '6413e312aacfd36c04ab3d8a',//+ id_client
-        {headers:{Authorization: `Bearer ${user_token}`}}
+        fetch(process.env.REACT_APP_JOBS + id_client, {headers:{Authorization: `Bearer ${user_token}`}}
         ).then((res) => {
             return res.json();
         }).then((resp) => {
@@ -79,10 +63,8 @@ const Jobs = (props) =>{
     let totalFromUser = getTotal()   
 
     return(
-        <> 
-            <div>
-                <AddJob cliente_id={id_client}/>            
-            </div>
+        <div className='list-jobs'> 
+            <AddJob cliente_id={id_client}/>                         
             <div className='table'>            
                 <TableContainer className='table-container'>
                 <Table>                
@@ -142,7 +124,7 @@ const Jobs = (props) =>{
                 </Table>
                 </TableContainer> 
             </div>
-    </>)
+    </div>)
 }
 
 export default Jobs

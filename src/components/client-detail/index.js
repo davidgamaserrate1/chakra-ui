@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Banner from '../banner/index.js';
 import './client-detail-styles.css' 
+import fundoDet from '../../assets/fundo-detalhado.png'
 import {
     Accordion,
     AccordionItem,
@@ -31,22 +32,21 @@ const ClientDetail = (props) =>{
             setInstagram(resp.instagram)
             setOrg(resp.organizacao)
             setPhone(resp.telefone)
-
         }).catch((err) => {
             console.log(err.message)
         })
     }, [])  
     
     return(
-        <>
+        <div className='client-detail'>
             <Header/>
             <Banner /> 
-            <Accordion style={{ 'display': 'flex', 'justifyContent': 'center','marginTop':'-100px'}} variant="simple" allowToggle>
-                <AccordionItem>
+            <Accordion style={{ 'display': 'flex', 'justifyContent': 'center','marginTop':'-100px',}} variant="simple" allowToggle>
+                <AccordionItem minWidth="60px">
                 <h2>
-                    <AccordionButton style={{
+                    <AccordionButton minWidth="60px" style={{
                         "color":"#fff",
-                        "background": "linear-gradient(90deg, rgba(8,193,251,1) 15%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%)",
+                        "background": "#fc3369 ",   
                         'borderRadius': '10px',
                         'color': '#ffffff',     
                         'padding': '10px',
@@ -54,7 +54,7 @@ const ClientDetail = (props) =>{
                         'textAlign': 'center'
                     }}>
                     <Box as="span" flex='1' textAlign='center'>
-                        {name}
+                       Cliente : {name}
                     </Box>
                     <AccordionIcon />
                     </AccordionButton>
@@ -69,7 +69,7 @@ const ClientDetail = (props) =>{
                 </AccordionItem>
             </Accordion>
             <Jobs client_id={client_id}/>
-        </>
+        </div>
             
     )
 

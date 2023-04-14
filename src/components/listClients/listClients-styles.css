@@ -1,16 +1,30 @@
+.list-clients-master{
+    
+}
+.list-client{
+    width: 100vw;
+     
+     
+
+    
+}
+
 .list-clients-container{
+    
+     
     width: 100vw;
     display: flex;     
-    height:  calc(100vh - (245px + 100px + 32px));
-    background-image:  url("../../assets/fundo.png") ;          
-    background-size: 100vw 100vh ;
+ 
+    height:  calc(100vh - (250px + 100px + 32px));
+    background:url('../../assets/fundo-detalhado.png') ;
+    background-position:  bottom   !important;
     flex-direction: column;
 }
 
 .list-clients-table{
     font-family: 'Raleway', sans-serif;     
     display: flex;
-    background: #f1ecea;
+    background: #fc3369 ;
     border-radius: 15px;
     margin: 0  250px ;
     position: relative;
@@ -19,10 +33,10 @@
 }
 
 .list-clients-head{
-    background: linear-gradient(90deg, rgba(8,193,251,1) 5%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
-    color: #ffffff;     
     display: flex;
     justify-content: space-around;
+    background: #fc3369 ;
+    color: #ffffff;     
     font-weight: bold;
     padding: 10px ;
     text-align: center;
@@ -31,8 +45,9 @@
 }
 
 .list-clients-data__name, .list-clients-data__instagram,
-.list-clients-data__tel, .list-clients-data__action, .list-clients-data__org {
-    text-transform: uppercase;
+.list-clients-data__tel, .list-clients-data__action, .list-clients-data__org {     
+    text-transform: uppercase;    
+     
 }
  
  

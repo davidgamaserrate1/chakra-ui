@@ -1,3 +1,17 @@
+.client-detail{
+    width: 100vw;
+    display: flex;     
+    
+    flex-direction: column;
+    background:url('../../assets/fundo-detalhado.png') ,  #fff !important;
+}
+.list-jobs{
+     width: 100%;
+     background-position: -130px bottom   !important;
+     background-repeat:repeat ;
+     height: 70vh;
+}
+
 .user{
     display: flex;
     margin: -20px 250px;  
@@ -6,7 +20,7 @@
 }
 
 .user-info{
-    background: linear-gradient(90deg, rgba(8,193,251,1) 15%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
+    background:  #fc3369 ;
     border-radius: 10px;
     color: #ffffff;     
     padding: 10px;     
@@ -21,7 +35,7 @@
 
 .table{
     display: flex;
-    background: linear-gradient(90deg, rgba(8,193,251,1) 15%, rgba(124,14,252,1) 51%, rgba(255,112,186,1) 98%);
+    background:  #fc3369 ;
     color: #fff;
     margin: 40px 250px;
     justify-content: center;

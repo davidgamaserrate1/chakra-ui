@@ -4,8 +4,8 @@
     border: none;
     padding: 5px;
     align-items: left;
-    background: linear-gradient(90deg, rgba(255,112,186,1) 11%, rgba(124,14,252,1) 72%, rgba(8,193,251,1) 97%);
-    background:  rgba(255,112,186,1);
+    background:  #fc3369 ;
+     
     margin: 20px  ;
      
 }
@@ -40,7 +40,7 @@
     margin:   5px;
     border-radius: 15px;
     justify-content: space-around;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);  
 }
 
 .cliente__name, .cliente__instagram , .cliente__phone, .cliente__action, .cliente__org {
