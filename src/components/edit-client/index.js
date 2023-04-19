@@ -44,16 +44,16 @@ const EditClient =(props) =>{
     }, [])
     
     const updateClient = (e) => {
-        e.preventDefault();
-        
-        const cliente = { nome, instagram, telefone, organizacao };
-        
+      e.preventDefault();
+      
+      const cliente = { nome, instagram, telefone, organizacao };
+      console.log(cliente)
         fetch( process.env.REACT_APP_EDIT_CLIENT + clientid, {
             method: "PUT",
-            headers: { "content-type": "application/json" },
+            headers: { "content-type": "application/json" ,'Authorization' : `Bearer ${user_token}`},
             body: JSON.stringify(cliente)            
         }).then((res)=>{
-            window.location.reload();
+           window.location.reload()
       }).catch((err) => {
             console.log(err)
         })
